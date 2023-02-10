@@ -27,15 +27,12 @@ public class Differ {
         String extension1 = getFileExtension(filePath1);
         String extension2 = getFileExtension(filePath2);
 
-        assert extension1 != null;
-        assert extension2 != null;
         Map<String, Object> data1 = parseContent(content1, extension1);
         Map<String, Object> data2 = parseContent(content2, extension2);
 
         Map<String, Item> differ = getDiff(data1, data2);
 
         return Output.getOutput(differ, format);
-
     }
 
     // getting absolute path to file and reading content
@@ -55,7 +52,7 @@ public class Differ {
     public static String getFileExtension(String pathToFile) {
 
         int index = pathToFile.lastIndexOf('.');
-        return index > 0 ? pathToFile.substring(index + 1) : null;
+        return index > 0 ? pathToFile.substring(index + 1) : "";
     }
 
     // getting result of parsing
