@@ -25,7 +25,8 @@ public class Parse {
 
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(content,
-                new TypeReference<HashMap<String, Object>>() {});
+                new TypeReference<HashMap<String, Object>>() {
+                });
     }
 
 }

@@ -2,9 +2,6 @@ package hexlet.code;
 
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import static hexlet.code.Item.ADDED;
 import static hexlet.code.Item.CHANGED;
 import static hexlet.code.Item.DELETED;
@@ -15,9 +12,10 @@ public class Output {
     public static String getOutput(Map<String, Item> differ,
                                    String format) throws Exception {
 
+
         return switch (format) {
             case "stylish" -> makeStylish(differ);
-            //case "plain"
+            // case "plain"
             // case "json"
             default -> throw new Exception("Formatting error");
         };
