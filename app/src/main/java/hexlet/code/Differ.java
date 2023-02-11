@@ -1,13 +1,10 @@
 package hexlet.code;
-
-import java.util.*;
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+;
+import java.util.Set;
+import java.util.Map;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Objects;
 
 import static hexlet.code.Item.ADDED;
 import static hexlet.code.Item.DELETED;
@@ -21,58 +18,18 @@ public class Differ {
                                   String format)
             throws Exception {
 
-        String content1 = getContent(filePath1);
-        String content2 = getContent(filePath2);
+        String content1 = Utils.getContent(filePath1);
+        String content2 = Utils.getContent(filePath2);
 
-        String extension1 = getFileExtension(filePath1);
-        String extension2 = getFileExtension(filePath2);
+        String extension1 = Utils.getFileExtension(filePath1);
+        String extension2 = Utils.getFileExtension(filePath2);
 
-        Map<String, Object> data1 = parseContent(content1, extension1);
-        Map<String, Object> data2 = parseContent(content2, extension2);
+        Map<String, Object> data1 = Parse.parseContent(content1, extension1);
+        Map<String, Object> data2 = Parse.parseContent(content2, extension2);
 
         Map<String, Item> differ = getDiff(data1, data2);
 
         return Output.getOutput(differ, format);
-    }
-
-    // getting absolute path to file and reading content
-    public static String getContent(String pathToFile)
-            throws Exception {
-
-        String content;
-        Path pathFile;
-        File file = new File(pathToFile);
-        String absolutePath = file.getAbsolutePath();
-        pathFile = Path.of(absolutePath);
-        content = Files.readString(pathFile);
-        return content;
-    }
-
-    // getting file extension
-    public static String getFileExtension(String pathToFile) {
-
-        int index = pathToFile.lastIndexOf('.');
-        return index > 0 ? pathToFile.substring(index + 1) : "";
-    }
-
-    // getting result of parsing
-    public static Map<String, Object> parseContent(String content,
-                                            String dataFormat)
-            throws Exception {
-
-        if (dataFormat.equals("json")) {
-            return parseJson(content);
-        }
-        throw new Exception("Unknown format: '" + dataFormat + "'");
-    }
-
-    // parsing json file
-    private static Map<String, Object> parseJson(String content)
-            throws JsonProcessingException {
-
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(content,
-                        new TypeReference<HashMap<String, Object>>() {});
     }
 
     // getting difference between parsed data
