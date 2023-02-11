@@ -16,19 +16,11 @@ public class Output {
                                    String format) throws Exception {
 
         return switch (format) {
-            case "json" -> makeJson(differ);
             case "stylish" -> makeStylish(differ);
             //case "plain"
+            // case "json"
             default -> throw new Exception("Formatting error");
         };
-    }
-
-    // make output json format
-    public static String makeJson(Map<String, Item> differ)
-            throws JsonProcessingException {
-
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(differ);
     }
 
     // make output stylish format
