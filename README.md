@@ -1,5 +1,5 @@
 <h1><b> Gendiff </b></h1>
-<p> Console app,compares two JSON/YAML documents and shows the differences between the objects. Output can be in 3 formats: stylish (default), json and pain.</p>
+<p> Console based app,compares two JSON/YAML files and shows the differences between the objects. Output can be in 3 formats: stylish (default), json and pain.</p>
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/rus-yanov/java-project-71/workflows/hexlet-check/badge.svg)](https://github.com/rus-yanov/java-project-71/actions)
