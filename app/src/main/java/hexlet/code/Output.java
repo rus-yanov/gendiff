@@ -35,17 +35,13 @@ public class Output {
         for (Map.Entry<String, Item> item : differ.entrySet()) {
             result.append("\n").append(" ".repeat(2));
             switch (item.getValue().getStatus()) {
-                case ADDED:
-                    result.append("+").append(" ")
-                            .append(item.getKey()).append(": ")
-                            .append(item.getValue().getOldValue());
-                    break;
-                case DELETED:
-                    result.append("-").append(" ")
-                            .append(item.getKey()).append(": ")
-                            .append(item.getValue().getOldValue());
-                    break;
-                case CHANGED:
+                case ADDED -> result.append("+").append(" ")
+                        .append(item.getKey()).append(": ")
+                        .append(item.getValue().getOldValue());
+                case DELETED -> result.append("-").append(" ")
+                        .append(item.getKey()).append(": ")
+                        .append(item.getValue().getOldValue());
+                case CHANGED -> {
                     result.append("-").append(" ")
                             .append(item.getKey()).append(": ")
                             .append(item.getValue().getOldValue());
@@ -53,14 +49,11 @@ public class Output {
                             .append("+").append(" ")
                             .append(item.getKey()).append(": ")
                             .append(item.getValue().getNewValue());
-                    break;
-                case UNCHANGED:
-                    result.append(" ".repeat(2))
-                            .append(item.getKey()).append(": ")
-                            .append(item.getValue().getOldValue());
-                    break;
-                default: throw new Exception("Incorrect status: '" + item.getValue().getStatus() + "'");
-
+                }
+                case UNCHANGED -> result.append(" ".repeat(2))
+                        .append(item.getKey()).append(": ")
+                        .append(item.getValue().getOldValue());
+                default -> throw new Exception("Incorrect status: '" + item.getValue().getStatus() + "'");
             }
         }
         return result.append("\n}").toString();

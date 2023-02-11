@@ -9,13 +9,10 @@ public class Utils {
     public static String getContent(String pathToFile)
             throws Exception {
 
-        String content;
-        Path pathFile;
         File file = new File(pathToFile);
         String absolutePath = file.getAbsolutePath();
-        pathFile = Path.of(absolutePath);
-        content = Files.readString(pathFile);
-        return content;
+        Path pathFile = Path.of(absolutePath);
+        return Files.readString(pathFile);
     }
 
     // getting file extension

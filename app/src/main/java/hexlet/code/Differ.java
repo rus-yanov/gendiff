@@ -1,5 +1,5 @@
 package hexlet.code;
-;
+
 import java.util.Set;
 import java.util.Map;
 import java.util.HashSet;
@@ -33,21 +33,21 @@ public class Differ {
     }
 
     // getting difference between parsed data
-    public static Map<String, Item> getDiff(Map<String, Object> dataFileOne,
-                                            Map<String, Object> dataFileTwo) {
+    public static Map<String, Item> getDiff(Map<String, Object> parsedData1,
+                                            Map<String, Object> parsedData2) {
 
         Map<String, Item> differ = new HashMap<>();
         Set<String> allKey = new HashSet<>();
-        allKey.addAll(dataFileOne.keySet());
-        allKey.addAll(dataFileTwo.keySet());
+        allKey.addAll(parsedData1.keySet());
+        allKey.addAll(parsedData2.keySet());
 
         for (String key : allKey) {
-            Object oldValue = dataFileOne.get(key);
-            Object newValue = dataFileTwo.get(key);
+            Object oldValue = parsedData1.get(key);
+            Object newValue = parsedData2.get(key);
 
-            if (!dataFileOne.containsKey(key)) {
+            if (!parsedData1.containsKey(key)) {
                 differ.put(key, new Item(newValue, ADDED));
-            } else if (!dataFileTwo.containsKey(key)) {
+            } else if (!parsedData2.containsKey(key)) {
                 differ.put(key, new Item(oldValue, DELETED));
             } else if (Objects.equals(oldValue, newValue)) {
                 differ.put(key, new Item(oldValue, newValue, UNCHANGED));
