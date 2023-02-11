@@ -11,15 +11,19 @@ import static hexlet.code.Item.DELETED;
 import static hexlet.code.Item.UNCHANGED;
 
 public class Output {
-    public static String getOutput(Map<String, Item> differ, String format) throws Exception {
+    // choosing right output depending on preferred data format output
+    public static String getOutput(Map<String, Item> differ,
+                                   String format) throws Exception {
 
         return switch (format) {
             case "json" -> makeJson(differ);
             case "stylish" -> makeStylish(differ);
+            //case "plain"
             default -> throw new Exception("Formatting error");
         };
     }
 
+    // make output json format
     public static String makeJson(Map<String, Item> differ)
             throws JsonProcessingException {
 
@@ -27,10 +31,10 @@ public class Output {
         return mapper.writeValueAsString(differ);
     }
 
+    // make output stylish format
     public static String makeStylish(Map<String, Item> differ) throws Exception {
 
         StringBuilder result = new StringBuilder();
-
         result.append("{");
         for (Map.Entry<String, Item> item : differ.entrySet()) {
             result.append("\n").append(" ".repeat(2));
