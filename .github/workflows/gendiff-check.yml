@@ -1,5 +1,5 @@
 # Name of workflow
-name: gendiff-check
+name: Basic validation
 
 # Trigger the workflow on push or pull request
 on:
