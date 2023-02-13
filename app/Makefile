@@ -2,4 +2,4 @@ run-dist:
 	./build/install/app/bin/app
 
 say-hello:
-	echo "Hello, World!"
+	@echo "Hello, World!"
