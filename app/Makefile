@@ -1,7 +1,7 @@
 run-dist:
 	@./build/install/app/bin/app
 
-say-hello:
+make say-hello:
 	@echo "Hello, World!"
 
 check:
