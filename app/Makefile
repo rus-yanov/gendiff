@@ -1,7 +1,7 @@
 run-dist:
 	@./build/install/app/bin/app
 
-build:
+make build:
 	@gradle clean build
 
 .PHONY: build
