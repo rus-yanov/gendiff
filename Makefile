@@ -1,8 +1,33 @@
-run-dist:
-	@./build/install/app/bin/app
+.DEFAULT_GOAL := run-dist
+
+run-dist: 
+	make -C app run-dist
+
+clean:
+	make -C app clean
 
 build:
-	@gradle clean build
+	make -C app build
+
+install:
+	make -C app install
+
+run-dist:
+	make -C run-dist
+
+run:
+	make -C app run
+
+test:
+	make -C app test
+
+report:
+	make -C app report
+
+lint:
+	make -C app lint
+
+
 
 .PHONY: build
 
