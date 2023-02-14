@@ -13,8 +13,10 @@ import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
 
 public class DifferTest {
 
-    private String file1Path;
-    private String file2Path;
+    private String jsonFilePath1;
+    private String jsonFilePath2;
+    private String yamlFilePath1;
+    private String yamlFilePath2;
     private String stylishContent;
 
     @BeforeAll
@@ -31,15 +33,22 @@ public class DifferTest {
 
     @BeforeEach
     public void doBeforeEach() throws IOException {
-        file1Path = getPath("file1.json");
-        file2Path = getPath("file2.json");
+        jsonFilePath1 = getPath("file1.json");
+        jsonFilePath2 = getPath("file2.json");
+        yamlFilePath1 = getPath("file1.yml");
+        yamlFilePath2 = getPath("file2.yml");
         stylishContent = getContent("result_stylish.txt");
+
     }
 
     @Test
     public void generateTest() throws Exception {
+        // test json format
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "stylish"))
+                .isEqualTo(stylishContent);
 
-        assertThat(Differ.generate(file1Path, file2Path, "stylish"))
+        // test yaml format
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "stylish"))
                 .isEqualTo(stylishContent);
     }
 }
