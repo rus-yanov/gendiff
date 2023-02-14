@@ -1,7 +1,9 @@
 package hexlet.code;
 
+import
 import org.assertj.core.api.AbstractBigDecimalAssert;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -9,7 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class AppTest {
+import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
+
+public class DifferTest {
 
     private static String file1Path;
     private static String file2Path;
@@ -27,8 +31,8 @@ public class AppTest {
         return Files.readString(filePath).trim();
     }
 
-    @BeforeAll
-    public static void doBeforeAll() throws IOException {
+    @BeforeEach
+    public static void doBeforeEach() throws IOException {
         file1Path = getPath("file1.json");
         file2Path = getPath("file2.json");
         stylishContent = getContent("result_stylish.txt");
@@ -39,11 +43,6 @@ public class AppTest {
 
         assertThat(Differ.generate(file1Path, file2Path, "stylish"))
                 .isEqualTo(stylishContent);
-    }
-
-    private <SELF extends AbstractBigDecimalAssert<SELF>>
-        AbstractBigDecimalAssert<SELF> assertThat(String stylish) {
-        return null;
     }
 }
 
