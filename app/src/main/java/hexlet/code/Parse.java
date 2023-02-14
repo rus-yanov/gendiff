@@ -18,11 +18,13 @@ public class Parse {
             case "json" -> {
                 return parseJson(content);
             }
-            case "yml" -> {
+            case "yml", "yaml" -> {
                 return parseYaml(content);
             }
+            default -> {
+                throw new Exception("Unknown format: '" + dataFormat + "'");
+            }
         }
-        throw new Exception("Unknown format: '" + dataFormat + "'");
     }
 
     // parsing json file
