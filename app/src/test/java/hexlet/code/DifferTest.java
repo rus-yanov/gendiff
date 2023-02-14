@@ -13,24 +13,24 @@ import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
 
 public class DifferTest {
 
-    private static String file1Path;
-    private static String file2Path;
-    private static String stylishContent;
+    private String file1Path;
+    private String file2Path;
+    private String stylishContent;
 
     @BeforeAll
-    public static String getPath(String fileName) {
+    public String getPath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
                 .toFile().getAbsolutePath();
     }
 
     @BeforeAll
-    public static String getContent(String fileName) throws IOException {
+    public String getContent(String fileName) throws IOException {
         Path filePath = Path.of(getPath(fileName));
         return Files.readString(filePath).trim();
     }
 
     @BeforeEach
-    public static void doBeforeEach() throws IOException {
+    public void doBeforeEach() throws IOException {
         file1Path = getPath("file1.json");
         file2Path = getPath("file2.json");
         stylishContent = getContent("result_stylish.txt");
