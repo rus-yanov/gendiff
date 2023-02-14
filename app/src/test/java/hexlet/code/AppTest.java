@@ -1,8 +1,5 @@
 package hexlet.code;
 
-import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.assertj.core.api.AbstractBigDecimalAssert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,7 +17,7 @@ public class AppTest {
 
     @BeforeAll
     public static String getPath(String fileName) {
-        return Paths.get("src","test","resources", fileName)
+        return Paths.get("src", "test", "resources", fileName)
                 .toFile().getAbsolutePath();
     }
 
@@ -45,7 +42,8 @@ public class AppTest {
     }
 
     private <SELF extends AbstractBigDecimalAssert<SELF>>
-    AbstractBigDecimalAssert<SELF> assertThat(String stylish) {
+        AbstractBigDecimalAssert<SELF> assertThat(String stylish) {
         return null;
     }
 }
+
