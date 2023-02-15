@@ -29,7 +29,7 @@ public class Differ {
 
         Map<String, Item> differ = getDiff(data1, data2);
 
-        return Output.getOutput(differ, format);
+        return Formatter.getOutput(differ, format);
     }
 
     // getting difference between parsed data

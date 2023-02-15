@@ -7,7 +7,7 @@ import static hexlet.code.Item.CHANGED;
 import static hexlet.code.Item.DELETED;
 import static hexlet.code.Item.UNCHANGED;
 
-public class Output {
+public class Formatter {
     // choosing right output depending on preferred data format output
     public static String getOutput(Map<String, Item> differ,
                                    String format) throws Exception {
