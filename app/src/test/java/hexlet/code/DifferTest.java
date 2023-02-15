@@ -21,18 +21,19 @@ public class DifferTest {
     private String resultPlain;
     private String resultJson;
 
-    public String getPath(String fileName) {
+
+    public final String getPath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
                 .toFile().getAbsolutePath();
     }
 
-    public String getContent(String fileName) throws IOException {
+    public final String getContent(String fileName) throws IOException {
         Path filePath = Path.of(getPath(fileName));
         return Files.readString(filePath).trim();
     }
 
     @BeforeEach
-    public void doBeforeEach() throws IOException {
+    public final void doBeforeEach() throws IOException {
         jsonFilePath1 = getPath("file1.json");
         jsonFilePath2 = getPath("file2.json");
         yamlFilePath1 = getPath("file1.yml");
