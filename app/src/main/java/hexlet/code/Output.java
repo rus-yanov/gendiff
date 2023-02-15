@@ -12,7 +12,6 @@ public class Output {
     public static String getOutput(Map<String, Item> differ,
                                    String format) throws Exception {
 
-
         return switch (format) {
             case "stylish" -> makeStylish(differ);
             // case "plain"

@@ -36,12 +36,17 @@ public class Differ {
     public static Map<String, Item> getDiff(Map<String, Object> parsedData1,
                                             Map<String, Object> parsedData2) {
 
+        // the key of differ contains the key from parsed data (which is also a map)
+        // the value contains special class Item, which represents condition of a key
         Map<String, Item> differ = new HashMap<>();
-        Set<String> allKey = new HashSet<>();
-        allKey.addAll(parsedData1.keySet());
-        allKey.addAll(parsedData2.keySet());
 
-        for (String key : allKey) {
+        // creating a set of keys from both parsed files
+        Set<String> allKeys = new HashSet<>();
+        allKeys.addAll(parsedData1.keySet());
+        allKeys.addAll(parsedData2.keySet());
+
+
+        for (String key : allKeys) {
             Object oldValue = parsedData1.get(key);
             Object newValue = parsedData2.get(key);
 

@@ -9,7 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class DifferTest {
 
@@ -19,13 +20,11 @@ public class DifferTest {
     private String yamlFilePath2;
     private String stylishContent;
 
-    @BeforeAll
     public String getPath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
                 .toFile().getAbsolutePath();
     }
 
-    @BeforeAll
     public String getContent(String fileName) throws IOException {
         Path filePath = Path.of(getPath(fileName));
         return Files.readString(filePath).trim();
