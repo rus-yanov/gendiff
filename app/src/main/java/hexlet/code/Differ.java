@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Set;
 import java.util.Map;
-import java.util.TreeSet;
+import java.util.HashSet;
 import java.util.TreeMap;
 import java.util.Objects;
 
@@ -38,10 +38,11 @@ public class Differ {
 
         // the key of differ contains the key from parsed data (which is also a map)
         // the value contains special class Item, which represents condition of a key
+        // using TreeMap in order to sort keys by alphabet
         Map<String, Item> differ = new TreeMap<>();
 
         // creating a set of keys from both parsed files
-        Set<String> allKeys = new TreeSet<>();
+        Set<String> allKeys = new HashSet<>();
         allKeys.addAll(parsedData1.keySet());
         allKeys.addAll(parsedData2.keySet());
 
