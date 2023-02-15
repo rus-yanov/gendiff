@@ -11,18 +11,18 @@ public final class Item {
     private Object newValue;
     private String status;
 
-    public Item(Object oldValue, Object newValue, String status) {
+    public Item(Object value1, Object value2, String status1) {
 
-        this.oldValue = oldValue;
-        this.newValue = newValue;
-        this.status = status;
+        this.oldValue = value1;
+        this.newValue = value2;
+        this.status = status1;
 
     }
 
-    public Item(Object oldValue, String status) {
+    public Item(Object value1, String status1) {
 
-        this.oldValue = oldValue;
-        this.status = status;
+        this.oldValue = value1;
+        this.status = status1;
         this.newValue = null;
 
     }
