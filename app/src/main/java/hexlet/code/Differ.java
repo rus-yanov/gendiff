@@ -12,6 +12,7 @@ import static hexlet.code.Item.UNCHANGED;
 import static hexlet.code.Item.CHANGED;
 
 public class Differ {
+
     // getting altogether all data and generating result
     public static String generate(String filePath1,
                                   String filePath2,
@@ -30,6 +31,26 @@ public class Differ {
         Map<String, Item> differ = getDiff(data1, data2);
 
         return Formatter.getOutput(differ, format);
+    }
+
+    // generate result (default stylish format)
+
+    public static String generate(String filePath1,
+                                  String filePath2)
+            throws Exception {
+
+        String content1 = Utils.getContent(filePath1);
+        String content2 = Utils.getContent(filePath2);
+
+        String extension1 = Utils.getFileExtension(filePath1);
+        String extension2 = Utils.getFileExtension(filePath2);
+
+        Map<String, Object> data1 = Parse.parseContent(content1, extension1);
+        Map<String, Object> data2 = Parse.parseContent(content2, extension2);
+
+        Map<String, Item> differ = getDiff(data1, data2);
+
+        return Formatter.makeStylish(differ);
     }
 
     // getting difference between parsed data
