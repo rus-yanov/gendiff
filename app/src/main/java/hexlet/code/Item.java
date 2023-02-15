@@ -1,7 +1,6 @@
 package hexlet.code;
-
 // class for containing differences between old and new values
-public class Item {
+public final class Item {
 
     public static final String ADDED = "added";
     public static final String DELETED = "deleted";
