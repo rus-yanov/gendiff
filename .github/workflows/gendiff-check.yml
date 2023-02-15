@@ -13,17 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
     - uses: actions/checkout@v3
+    
     - name: Setup Java JDK
       uses: actions/setup-java@v3.10.0
       with:
         java-version: '17'
         distribution: 'temurin'
+        
     - name: Gradle Build Action
       uses: gradle/gradle-build-action@v2.3.3
       with:
-        arguments: build
+        arguments: make build
         build-root-directory: ./app
+        
     - name: Publish code coverage
       uses: paambaati/codeclimate-action@v3.2.0
       env:
