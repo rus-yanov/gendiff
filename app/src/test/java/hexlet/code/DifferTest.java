@@ -18,6 +18,7 @@ public class DifferTest {
     private String yamlFilePath1;
     private String yamlFilePath2;
     private String stylishContent;
+    private String plainContent;
 
     public String getPath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
@@ -36,18 +37,30 @@ public class DifferTest {
         yamlFilePath1 = getPath("file1.yml");
         yamlFilePath2 = getPath("file2.yml");
         stylishContent = getContent("result_stylish.txt");
-
+        plainContent = getContent("result_plain.txt");
     }
 
     @Test
     public void generateTest() throws Exception {
-        // test json format
+        // input: json format
+        // output: stylish
         assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "stylish"))
                 .isEqualTo(stylishContent);
 
-        // test yaml format
+        // input: yaml format
+        // output: stylish
         assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "stylish"))
                 .isEqualTo(stylishContent);
+
+        // input: json format
+        // output: plain
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "plain"))
+                .isEqualTo(plainContent);
+
+        // input: yaml format
+        // output: plain
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "plain"))
+                .isEqualTo(plainContent);
     }
 }
 
