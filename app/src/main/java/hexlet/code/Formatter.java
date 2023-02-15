@@ -1,5 +1,8 @@
 package hexlet.code;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.Map;
 import java.util.List;
 
@@ -20,9 +23,16 @@ public class Formatter {
         return switch (format) {
             case "stylish" -> makeStylish(differ);
             case "plain" -> makePlain(differ);
-            // case "json"
+            case "json" -> makeJson(differ);
             default -> throw new Exception("Formatting error");
         };
+    }
+
+    // make json format output
+    public static String makeJson(Map<String, Item> differ) throws JsonProcessingException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(differ);
     }
 
     // make stylish format output
@@ -55,7 +65,7 @@ public class Formatter {
                 default -> throw new Exception("Incorrect status: '" + item.getValue().getStatus() + "'");
             }
         }
-        return String.valueOf(result.append("\n}"));
+        return result.append("\n}").toString();
     }
 
     // make plain format output
@@ -79,7 +89,7 @@ public class Formatter {
                 default -> throw new Exception("Incorrect status: '" + item.getValue().getStatus() + "'");
             }
         }
-        return result.toString().trim();
+        return String.valueOf(result).trim();
     }
 
     // check if value is complex

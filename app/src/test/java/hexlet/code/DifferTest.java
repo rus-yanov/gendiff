@@ -17,8 +17,9 @@ public class DifferTest {
     private String jsonFilePath2;
     private String yamlFilePath1;
     private String yamlFilePath2;
-    private String stylishContent;
-    private String plainContent;
+    private String resultStylish;
+    private String resultPlain;
+    private String resultJson;
 
     public String getPath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
@@ -36,31 +37,42 @@ public class DifferTest {
         jsonFilePath2 = getPath("file2.json");
         yamlFilePath1 = getPath("file1.yml");
         yamlFilePath2 = getPath("file2.yml");
-        stylishContent = getContent("result_stylish.txt");
-        plainContent = getContent("result_plain.txt");
+        resultStylish = getContent("result_stylish.txt");
+        resultPlain = getContent("result_plain.txt");
+        resultJson = getContent("result_json.json");
     }
 
     @Test
     public void generateTest() throws Exception {
-        // input: json format
-        // output: stylish
+        // input format: json
+        // output format: stylish
         assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "stylish"))
-                .isEqualTo(stylishContent);
+                .isEqualTo(resultStylish);
 
-        // input: yaml format
-        // output: stylish
+        // input format: yaml
+        // output format: stylish
         assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "stylish"))
-                .isEqualTo(stylishContent);
+                .isEqualTo(resultStylish);
 
-        // input: json format
-        // output: plain
+        // input format: json
+        // output format: plain
         assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "plain"))
-                .isEqualTo(plainContent);
+                .isEqualTo(resultPlain);
 
-        // input: yaml format
-        // output: plain
+        // input format: yaml
+        // output format: plain
         assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "plain"))
-                .isEqualTo(plainContent);
+                .isEqualTo(resultPlain);
+
+        // input format: json
+        // output format: json
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "json"))
+                .isEqualTo(resultJson);
+
+        // input format: yaml
+        // output format: json
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "json"))
+                .isEqualTo(resultJson);
     }
 }
 
