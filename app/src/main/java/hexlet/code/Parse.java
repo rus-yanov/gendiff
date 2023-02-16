@@ -39,7 +39,7 @@ public class Parse {
 
     // parsing yaml file
     private static Map<String, Object> parseYaml(String content)
-            throws JsonProcessingException {
+            throws Exception {
 
         ObjectMapper mapper = new YAMLMapper();
         return mapper.readValue(content,
