@@ -9,15 +9,26 @@
 
 <h3><b> Use cases:</b></h3> 
 <ul>
+  
   <li>Default (stylish) format output</li>
-
+  
 [![asciicast](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt.svg)](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt)
 
-  <li>Plain format output</li>
+  <li>Plain format output</li> 
   
 [![asciicast](https://asciinema.org/a/luhB2ApMyaTT653Ml2ip6ptCc.svg)](https://asciinema.org/a/luhB2ApMyaTT653Ml2ip6ptCc)
+  
+  <li>JSON format output</li>  
+  
+[![asciicast](https://asciinema.org/a/vkeRajjIQ7Y9k5fgtR2U787lY.svg)](https://asciinema.org/a/vkeRajjIQ7Y9k5fgtR2U787lY)
+  
+  <li>Help run</li>  
+  
+  [![asciicast](https://asciinema.org/a/gt7hCQTwBstiuhse4d1sBDsg6.svg)](https://asciinema.org/a/gt7hCQTwBstiuhse4d1sBDsg6)
 
 </ul>
+
+
 ## Setup
 ```sh
 make build
