@@ -6,9 +6,9 @@
 
 [![gendiff-check](https://github.com/rus-yanov/java-project-71/actions/workflows/gendiff-check.yml/badge.svg?branch=main)](https://github.com/rus-yanov/java-project-71/actions/workflows/gendiff-check.yml)
 
-<a href="https://codeclimate.com/github/rus-yanov/java-project-71/maintainability"><img src="https://api.codeclimate.com/v1/badges/db06c685490d05b7b1dd/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/db06c685490d05b7b1dd/maintainability)](https://codeclimate.com/github/rus-yanov/java-project-71/maintainability)
 
-<a href="https://codeclimate.com/github/rus-yanov/java-project-71/test_coverage"><img src="https://api.codeclimate.com/v1/badges/db06c685490d05b7b1dd/test_coverage" /></a>
+[![Test Coverage](https://api.codeclimate.com/v1/badges/db06c685490d05b7b1dd/test_coverage)](https://codeclimate.com/github/rus-yanov/java-project-71/test_coverage)
 
 <h3><b> Use cases:</b></h3> 
 <ul>
