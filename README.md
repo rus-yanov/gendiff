@@ -15,3 +15,32 @@
   <li> <a href="https://asciinema.org/a/IjgbunE0wQuuSML1UaFd37NHR">Default (stylish format output)</a> </li>
 </ul>
 
+
+
+
+
+## Setup
+```sh
+make build
+```
+
+## Run
+```sh
+make run
+```
+
+## Run tests
+```sh
+make test
+```
+
+## Run checkstyle
+```sh
+make lint
+```
+
+## Check update dependencies and plugins
+```sh
+make update
+```
+
