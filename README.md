@@ -9,8 +9,9 @@
 
 <h3><b> Use cases:</b></h3> 
 <ul>
-  <li> <a href="https://asciinema.org/a/IjgbunE0wQuuSML1UaFd37NHR">Default (stylish format output)</a> </li>
+  <li>Default (stylish format output)</li>
 </ul>
+<script async id="asciicast-2S65kzC8hHKeAYWLts40Wtcnt" src="https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt.js"></script>
 
 
 
