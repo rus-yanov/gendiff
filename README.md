@@ -9,12 +9,15 @@
 
 <h3><b> Use cases:</b></h3> 
 <ul>
-  <li>Default (stylish format output)</li>
-</ul>
+  <li>Default (stylish) format output</li>
 
 [![asciicast](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt.svg)](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt)
 
+  <li>Plain format output</li>
+  
+[![asciicast](https://asciinema.org/a/luhB2ApMyaTT653Ml2ip6ptCc.svg)](https://asciinema.org/a/luhB2ApMyaTT653Ml2ip6ptCc)
 
+</ul>
 ## Setup
 ```sh
 make build
