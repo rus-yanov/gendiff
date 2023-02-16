@@ -11,6 +11,7 @@
 <ul>
   <li>Default (stylish format output)</li>
 </ul>
+
 [![asciicast](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt.svg)](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt)
 
 
