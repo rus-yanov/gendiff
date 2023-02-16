@@ -11,10 +11,7 @@
 <ul>
   <li>Default (stylish format output)</li>
 </ul>
-<script async id="asciicast-2S65kzC8hHKeAYWLts40Wtcnt" src="https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt.js"></script>
-
-
-
+[![asciicast](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt.svg)](https://asciinema.org/a/2S65kzC8hHKeAYWLts40Wtcnt)
 
 
 ## Setup
