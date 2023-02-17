@@ -45,6 +45,17 @@ public class DifferTest {
 
     @Test
     public void generateTest() throws Exception {
+
+        // input format: json
+        // output format: default
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2))
+                .isEqualTo(resultStylish);
+
+        // input format: yaml
+        // output format: default
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2))
+                .isEqualTo(resultStylish);
+
         // input format: json
         // output format: stylish
         assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "stylish"))
