@@ -8,7 +8,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Parse {
+public class Parser {
     // getting result of parsing
     public static Map<String, Object> parseContent(String content,
                                                    String dataFormat)

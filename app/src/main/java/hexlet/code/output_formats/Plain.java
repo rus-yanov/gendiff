@@ -1,4 +1,4 @@
-package hexlet.code.formatter;
+package hexlet.code.output_formats;
 
 import hexlet.code.Item;
 
@@ -12,17 +12,14 @@ import static hexlet.code.Item.UNCHANGED;
 
 public class Plain {
 
-    private static String newValue;
-    private static String oldValue;
-
     // make plain format output
     public static String makePlain(Map<String, Item> differ) throws Exception {
 
         StringBuilder result = new StringBuilder();
 
         for (Map.Entry<String, Item> item : differ.entrySet()) {
-            newValue = checkValue(item.getValue().getNewValue());
-            oldValue = checkValue(item.getValue().getOldValue());
+            String newValue = checkValue(item.getValue().getNewValue());
+            String oldValue = checkValue(item.getValue().getOldValue());
 
             switch (item.getValue().getStatus()) {
                 case ADDED -> result.append("Property '").append(item.getKey())

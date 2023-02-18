@@ -1,10 +1,12 @@
-package hexlet.code.formatter;
+package hexlet.code;
 
-import hexlet.code.Item;
+import hexlet.code.output_formats.Json;
+import hexlet.code.output_formats.Plain;
+import hexlet.code.output_formats.Stylish;
 
 import java.util.Map;
 
-public class Output {
+public class Formatter {
 
     // choosing right output depending on preferred data format output
     public static String getOutput(Map<String, Item> differ,
@@ -14,7 +16,7 @@ public class Output {
             case "stylish" -> Stylish.makeStylish(differ);
             case "plain" -> Plain.makePlain(differ);
             case "json" -> Json.makeJson(differ);
-            default -> throw new Exception("Formatting error" + format);
+            default -> throw new Exception("Formatting error: '" + format + "'");
         };
     }
 }

@@ -1,4 +1,4 @@
-package hexlet.code.formatter;
+package hexlet.code.output_formats;
 
 import hexlet.code.Item;
 
