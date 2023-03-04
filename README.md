@@ -4,8 +4,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/db06c685490d05b7b1dd/maintainability)](https://codeclimate.com/github/rus-yanov/java-project-71/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/db06c685490d05b7b1dd/test_coverage)](https://codeclimate.com/github/rus-yanov/java-project-71/test_coverage)
 
-<h1><b> Gendiff </b></h1>
+<h2><b> Gendiff </b></h2>
 <p> Console based app,compares two JSON/YAML files and shows the differences between the objects. Output can be in 3 formats: stylish (default), json and pain.</p>
+<p><b>Stack:</b> Java Collections Framework, CI (Github actions), JUnit, TDD, CLI Builder (picocli), Jackson, Test Coverage, json, yaml.</p>
 <h3><b> Use cases:</b></h3> 
 <ul>
   
